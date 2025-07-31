@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuatro en Línea</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <header>
+    <h1>🎯 Cuatro en Línea</h1>
+    <p>Conecta 4 fichas para ganar</p>
+  </header>
+
+  <main>
+    <section id="game-info">
+      <p id="turno-actual">Turno: Jugador 1 🔴</p>
+      <button id="reiniciar">Reiniciar partida</button>
+    </section>
+	<section id="modo-juego">
+		<label for="modo">Modo de juego:</label>
+		<select id="modo">
+			<option value="pvp">Jugador vs Jugador</option>
+			<option value="ia">Jugador vs IA</option>
+		</select>
+	</section>
+	<section id="dificultad-juego">
+  <label for="dificultad">Dificultad IA:</label>
+  <select id="dificultad">
+    <option value="facil">Fácil</option>
+    <option value="media" selected>Media</option>
+    <option value="dificil">Difícil</option>
+  </select>
+</section>
+
+	
+    <section id="tablero" class="tablero">
+      <!-- Las celdas se generarán dinámicamente desde JavaScript -->
+    </section>
+
+    <div id="mensaje-final" class="oculto"></div>
+  </main>
+
+  <footer>
+    <p>Desarrollado por Marcos 🧠 | HTML + CSS + JS</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

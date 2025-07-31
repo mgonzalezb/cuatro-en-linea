@@ -1,0 +1,171 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+  color: #222;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Encabezado */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  color: #d35400;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Información del juego */
+#game-info {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#turno-actual {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+#reiniciar {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #e84393;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px #c0392b;
+  transition: 0.2s ease;
+}
+
+#reiniciar:hover {
+  background-color: #d63031;
+}
+
+/* Tablero estilo cartoon */
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  grid-template-rows: repeat(6, 70px);
+  gap: 8px;
+  justify-content: center;
+  margin: 2rem auto;
+  background-color: #2d3436;
+  padding: 14px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Celdas vacías */
+.celda {
+  width: 70px;
+  height: 70px;
+  background-color: #dfe6e9;
+  border-radius: 50%;
+  border: 3px solid #b2bec3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.celda:hover {
+  transform: scale(1.1);
+}
+
+/* Fichas de jugadores estilo caricatura */
+.ficha-roja,
+.ficha-amarilla {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  animation: caer 0.3s ease-out;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,0.2);
+}
+
+.ficha-roja {
+  background: radial-gradient(circle, #ff6b6b, #e74c3c);
+}
+
+.ficha-amarilla {
+  background: radial-gradient(circle, #ffeaa7, #f1c40f);
+}
+
+/* Animación caída */
+@keyframes caer {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mensaje final */
+#mensaje-final {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fab1a0;
+  border: 3px dashed #d63031;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 3px 3px 0 #d63031;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  opacity: 0.9;
+  z-index: 99999;
+  animation: confettiFall 2.5s ease-in forwards;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotateZ(1080deg);
+    opacity: 0;
+  }
+}
+
+#modo-juego {
+  margin: 1rem 0;
+}
+
+#dificultad-juego {
+  margin-bottom: 1rem;
+}
